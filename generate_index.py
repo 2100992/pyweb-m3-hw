@@ -27,10 +27,10 @@ def generate_page(head, body):
         </html>'''
     return page
 
-def generate_footer():
-    footer = '''<hr/>
-        <a href="about.html">
-            О чем эта страница
+def generate_footer(link, description):
+    footer = f'''<hr/>
+        <a href="{link}">
+            {description}
         </a>'''
     return footer
 
@@ -50,7 +50,7 @@ def main():
         title = 'Гороскоп на сегодня',
         header = 'Что день ' + str(today) + ' готовит',
         paragraphs = generate_prophecies(total_num=3, num_sentences=4),
-        footer = generate_footer(),
+        footer = generate_footer('about.html', 'О реализации'),
     )
 
 main()
